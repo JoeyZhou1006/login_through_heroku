@@ -27,4 +27,8 @@ app.get('/dashboard', stormpath.loginRequired, function(req, res) {
 	res.send('Hi: ' + req.user.email + '. Logout <form action="/logout" method="POST"><button type="submit">Logout</button></form>');
 });
 
+app.get('/products', stormpath.loginRequired, function(req, res)  {
+	res.send('hi: ' + req.user.email + 'wel come to the products page to manage your products');
+});
+
 app.listen(process.env.PORT || 3000);
